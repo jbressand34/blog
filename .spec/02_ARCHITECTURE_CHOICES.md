@@ -7,3 +7,40 @@
   - Pas de serveur à configurer ni maintenir — Bénéficie à : US-08, US-01.
   - Prévisualisations par branche (preview deployments) — Bénéficie à : US-03, US-10.
   - SSL inclus et sécurisé — Bénéficie à : US-09.
+- **Next.js**
+  - SSG (Static Site Generation) et rendu statique — Bénéficie à : US-01, US-05, US-09.
+  - Déploiement natif sur Vercel (intégration Git) — Bénéficie à : US-08, US-03, US-01.
+  - File-based routing et lecture de fichiers (ex. Markdown) — Bénéficie à : US-10, US-02, US-03.
+  - Bonnes performances et SEO par défaut — Bénéficie à : US-09, US-05, US-06.
+  - Prévisualisations par branche (Vercel) — Bénéficie à : US-03, US-10.
+  - Fragmentation limitée (pas de versions ou d’APIs concurrentes comme Vue 2/3 ou Options/Composition API), peu impactante pour la maintenance et la pérennité — Bénéficie à : US-01, US-03.
+- **JAMstack**
+  - Pages pré-générées au build, pas de serveur applicatif à faire tourner — Bénéficie à : US-08, US-01, US-09.
+  - Contenu et code dans le même dépôt Git, déploiement au push — Bénéficie à : US-03, US-01, US-10.
+  - Site servi en statique depuis un CDN — Bénéficie à : US-09, US-05, US-06.
+  - Workflow « édition / PR / merge = mise en ligne » — Bénéficie à : US-03, US-10.
+  - Hébergement de fichiers statiques, peu coûteux et simple — Bénéficie à : US-08.
+
+# Alternatives ignorées
+
+- **Nuxt.js**
+  - Écosystème Vue/Nuxt moins fourni que d’autres pour les blogs et sites à contenu statique (templates, exemples, bonnes pratiques).
+  - Communauté et documentation pour ce type de projet (blog statique, Markdown) moins présentes que pour d’autres stacks.
+  - Fragmentation de l’écosystème Vue/Nuxt (Vue 2 vs 3, Nuxt 2 vs 3, Options API vs Composition API) rendant le choix de stack et l’évaluation de la pérennité plus complexes.
+- **Vanilla JavaScript (sans framework)**
+  - Pas de SSG ni de rendu statique intégré — tout à construire ou à brancher manuellement.
+  - Pas de file-based routing ni de conventions — structure du projet, routes et URLs à gérer à la main.
+  - Plus de code boilerplate (routing, chargement des contenus, mise à jour du DOM) à maintenir.
+  - Écosystème limité pour un blog statique (Markdown, taxonomie, métadonnées) sans framework ou outil dédié.
+  - Pas d’optimisations intégrées (code splitting, prefetch, SEO) — à mettre en place soi-même.
+- **GitHub (hébergement blog)**
+  - Pas de prévisualisations par branche intégrées nativement — il faut configurer des workflows (ex. GitHub Actions) ou des outils externes.
+  - Pipeline de build et de déploiement à configurer entièrement pour les frameworks modernes (pas d’intégration clé en main).
+  - Plateforme centrée sur le code et les dépôts, pas sur le déploiement — limites en bande passante, taille de build et moins d’optimisations dédiées au front.
+  - Pas de CDN ni d’optimisations de performance dédiées à l’hébergement de sites, par rapport à une plateforme dédiée.
+- **CMS headless**
+  - Contenu hors dépôt Git — pas de versioning du contenu avec le code ni de review en PR.
+  - Coût récurrent des plateformes (abonnements, limites d’usage).
+  - Dépendance à un service tiers pour la disponibilité et la pérennité du contenu.
+  - Back-office et maintenance en plus (schémas, droits, sauvegardes).
+  - Souvent surdimensionné pour un blog tenu par une seule personne.
