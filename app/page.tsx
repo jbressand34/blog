@@ -9,9 +9,9 @@ export default function Home() {
     .sort((a, b) => (b.meta.date || "").localeCompare(a.meta.date || ""));
 
   return (
-    <main style={{ padding: "2rem", maxWidth: "48rem", margin: "0 auto" }}>
-      <h1>Blog</h1>
-      <p>Bienvenue. Articles disponibles :</p>
+    <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
+      <h1 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>Articles</h1>
+      <p style={{ color: "#666", marginBottom: "1rem" }}>Bienvenue. Articles disponibles :</p>
       {articles.length === 0 ? (
         <p>Aucun article pour l’instant.</p>
       ) : (

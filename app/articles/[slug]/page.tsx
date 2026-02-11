@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { getArticleBySlug, getArticleSlugs } from "@/lib/markdown";
 
@@ -17,10 +16,7 @@ export default function ArticlePage({ params }: Props) {
   if (!article) notFound();
 
   return (
-    <main style={{ padding: "2rem", maxWidth: "48rem", margin: "0 auto" }}>
-      <p style={{ marginBottom: "1rem" }}>
-        <Link href="/">← Retour au blog</Link>
-      </p>
+    <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
       <article>
         <h1>{article.meta.title}</h1>
         {article.meta.date && (
