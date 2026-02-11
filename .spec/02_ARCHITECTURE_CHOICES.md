@@ -19,11 +19,7 @@
   - Contenu et code dans le même dépôt Git, déploiement au push — Bénéficie à : US-03, US-01, US-10.
   - Site servi en statique depuis un CDN — Bénéficie à : US-09, US-05, US-06.
   - Workflow « édition / PR / merge = mise en ligne » — Bénéficie à : US-03, US-10.
-  - Hébergement de fichiers statiques, peu coûteux et simple — Bénéficie à : US-08.
-
-# Alternatives ignorées
-
-- **Nuxt.js**
+  - Hébergement de fichiers statiques, peu coûteux et simple — Bénéficie à : US-08.# Alternatives ignorées- **Nuxt.js**
   - Écosystème Vue/Nuxt moins fourni que d’autres pour les blogs et sites à contenu statique (templates, exemples, bonnes pratiques).
   - Communauté et documentation pour ce type de projet (blog statique, Markdown) moins présentes que pour d’autres stacks.
   - Fragmentation de l’écosystème Vue/Nuxt (Vue 2 vs 3, Nuxt 2 vs 3, Options API vs Composition API) rendant le choix de stack et l’évaluation de la pérennité plus complexes.

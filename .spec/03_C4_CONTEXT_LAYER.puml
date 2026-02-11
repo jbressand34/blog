@@ -1,0 +1,20 @@
+@startuml C4_Context_Blog
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title Couche Contexte C4 — Blog
+
+Person(bloguer, "Blogueur", "Publie et gère les articles, présente sa personne et ses objectifs")
+Person(visiteur, "Visiteur", "Lit les articles, parcourt la taxonomie, consulte la présentation du site")
+
+System(blog, "Blog", "Site statique (JAMstack) : articles en Markdown, taxonomie, déploiement au push")
+
+System_Ext(git, "Dépôt Git", "Articles et code versionnés, source du contenu au build")
+System_Ext(vercel, "Vercel", "Hébergement et déploiement automatique depuis Git")
+
+Rel(bloguer, blog, "Publie, gère, consulte")
+Rel(visiteur, blog, "Consulte, lit les articles, parcourt la taxonomie")
+Rel(bloguer, git, "Dépose les articles (push)", "Git")
+Rel(blog, git, "Lit le contenu au build", "Build")
+Rel(blog, vercel, "Déployé et hébergé sur", "CDN")
+
+@enduml

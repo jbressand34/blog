@@ -1,0 +1,18 @@
+@startuml C4_Component_Blog
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Couche Component C4 — Application web (Blog)
+
+Container_Boundary(blog_web, "Application web") {
+  Component(pages, "Pages", "Next.js (file-based routing)", "Pages articles, liste, taxonomie, présentation du site")
+  Component(layout, "Layout", "React", "Mise en page commune, navigation, en-tête")
+  Component(markdown, "Lecture Markdown", "MDX / remark / rehype", "Chargement et rendu des articles (front matter, contenu)")
+  Component(taxonomie, "Taxonomie", "Next.js, métadonnées", "Catégories et tags, listes par catégorie/tag")
+}
+
+Rel(pages, layout, "Utilise pour le rendu")
+Rel(pages, markdown, "Rend le contenu des articles")
+Rel(pages, taxonomie, "Affiche listes et filtres")
+Rel(markdown, taxonomie, "Expose métadonnées (catégories, tags)")
+
+@enduml
