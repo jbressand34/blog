@@ -20,3 +20,22 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.prose h2 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose p {
+  margin-bottom: 0.75rem;
+}
+
+.prose ul {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.prose strong {
+  font-weight: 600;
+}

@@ -1,8 +1,35 @@
+import Link from "next/link";
+import { getArticleSlugs, getArticleBySlug } from "@/lib/markdown";
+
 export default function Home() {
+  const slugs = getArticleSlugs();
+  const articles = slugs
+    .map((slug) => getArticleBySlug(slug))
+    .filter((a): a is NonNullable<typeof a> => a !== null)
+    .sort((a, b) => (b.meta.date || "").localeCompare(a.meta.date || ""));
+
   return (
     <main style={{ padding: "2rem", maxWidth: "48rem", margin: "0 auto" }}>
       <h1>Blog</h1>
-      <p>Bienvenue. Premier test — étape 1 (squelette Next.js).</p>
+      <p>Bienvenue. Articles disponibles :</p>
+      {articles.length === 0 ? (
+        <p>Aucun article pour l’instant.</p>
+      ) : (
+        <ul style={{ marginTop: "1rem", listStyle: "none" }}>
+          {articles.map((article) => (
+            <li key={article.meta.slug} style={{ marginBottom: "0.5rem" }}>
+              <Link href={`/articles/${article.meta.slug}`}>
+                {article.meta.title}
+              </Link>
+              {article.meta.date && (
+                <span style={{ color: "#666", marginLeft: "0.5rem" }}>
+                  — {article.meta.date}
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
     </main>
   );
 }
