@@ -25,28 +25,36 @@ export default function Home() {
             Browse by
           </h2>
           {tags.length > 0 && (
-            <p style={{ marginBottom: "0.25rem" }}>
-              Tags:{" "}
-              {tags.map((tag, i) => (
-                <span key={tag}>
-                  <Link href={`/tags/${encodeURIComponent(tag)}`}>{tag}</Link>
-                  {i < tags.length - 1 ? ", " : ""}
-                </span>
-              ))}
-            </p>
+            <>
+              <span style={{ fontSize: "0.9rem", color: "var(--color-text-muted)" }}>Tags</span>
+              <div className="pills">
+                {tags.map((tag) => (
+                  <Link
+                    key={tag}
+                    href={`/tags/${encodeURIComponent(tag)}`}
+                    className="pill"
+                  >
+                    {tag}
+                  </Link>
+                ))}
+              </div>
+            </>
           )}
           {categories.length > 0 && (
-            <p>
-              Categories:{" "}
-              {categories.map((cat, i) => (
-                <span key={cat}>
-                  <Link href={`/categories/${encodeURIComponent(cat)}`}>
+            <>
+              <span style={{ fontSize: "0.9rem", color: "var(--color-text-muted)", display: "block", marginTop: tags.length > 0 ? "1rem" : 0 }}>Categories</span>
+              <div className="pills">
+                {categories.map((cat) => (
+                  <Link
+                    key={cat}
+                    href={`/categories/${encodeURIComponent(cat)}`}
+                    className="pill"
+                  >
                     {cat}
                   </Link>
-                  {i < categories.length - 1 ? ", " : ""}
-                </span>
-              ))}
-            </p>
+                ))}
+              </div>
+            </>
           )}
         </section>
       )}
@@ -57,17 +65,22 @@ export default function Home() {
       {articles.length === 0 ? (
         <p>No articles yet.</p>
       ) : (
-        <ul style={{ listStyle: "none" }}>
+        <ul className="article-list">
           {articles.map((article) => (
-            <li key={article.meta.slug} style={{ marginBottom: "0.5rem" }}>
-              <Link href={`/articles/${article.meta.slug}`}>
-                {article.meta.title}
-              </Link>
-              {article.meta.date && (
-                <span className="text-muted" style={{ marginLeft: "0.5rem" }}>
-                  — {article.meta.date}
-                </span>
-              )}
+            <li key={article.meta.slug}>
+              <div className="article-list-item">
+                <div className="title-block">
+                  <Link href={`/articles/${article.meta.slug}`}>
+                    {article.meta.title}
+                  </Link>
+                  {article.meta.category && (
+                    <div className="category">{article.meta.category}</div>
+                  )}
+                </div>
+                {article.meta.date && (
+                  <span className="date">{article.meta.date}</span>
+                )}
+              </div>
             </li>
           ))}
         </ul>
