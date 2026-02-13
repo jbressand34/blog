@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header
       style={{
-        borderBottom: "1px solid #eee",
+        borderBottom: "1px solid var(--color-border)",
         padding: "1rem 2rem",
         marginBottom: "2rem",
       }}
@@ -24,7 +24,7 @@ export default function Header() {
         >
           Blog
         </Link>
-        <Link href="/presentation" style={{ color: "#666" }}>
+        <Link href="/presentation" className="text-muted">
           About
         </Link>
       </nav>

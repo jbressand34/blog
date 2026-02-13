@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
       <h1 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>Articles</h1>
-      <p style={{ color: "#666", marginBottom: "1rem" }}>
+      <p className="text-muted" style={{ marginBottom: "1rem" }}>
         Welcome. Browse articles, tags, or categories.
       </p>
 
@@ -64,7 +64,7 @@ export default function Home() {
                 {article.meta.title}
               </Link>
               {article.meta.date && (
-                <span style={{ color: "#666", marginLeft: "0.5rem" }}>
+                <span className="text-muted" style={{ marginLeft: "0.5rem" }}>
                   — {article.meta.date}
                 </span>
               )}

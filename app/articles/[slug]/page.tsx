@@ -22,7 +22,7 @@ export default function ArticlePage({ params }: Props) {
     <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
       <article>
         <h1>{article.meta.title}</h1>
-        <p style={{ color: "#666", marginBottom: "0.5rem" }}>
+        <p className="text-muted" style={{ marginBottom: "0.5rem" }}>
           {article.meta.date}
           {(category || (tags && tags.length > 0)) && (
             <span style={{ marginLeft: "1rem" }}>

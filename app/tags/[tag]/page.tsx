@@ -25,7 +25,7 @@ export default function TagPage({ params }: Props) {
       <h1 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>
         Tag: {tag}
       </h1>
-      <p style={{ color: "#666", marginBottom: "1rem" }}>
+      <p className="text-muted" style={{ marginBottom: "1rem" }}>
         {articles.length} article{articles.length > 1 ? "s" : ""}.
       </p>
       <ul style={{ listStyle: "none" }}>
@@ -35,7 +35,7 @@ export default function TagPage({ params }: Props) {
               {article.meta.title}
             </Link>
             {article.meta.date && (
-              <span style={{ color: "#666", marginLeft: "0.5rem" }}>
+              <span className="text-muted" style={{ marginLeft: "0.5rem" }}>
                 — {article.meta.date}
               </span>
             )}
