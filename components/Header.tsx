@@ -25,7 +25,7 @@ export default function Header() {
           Blog
         </Link>
         <Link href="/presentation" style={{ color: "#666" }}>
-          Présentation
+          About
         </Link>
       </nav>
     </header>

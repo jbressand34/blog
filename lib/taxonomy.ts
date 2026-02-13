@@ -7,7 +7,7 @@ function getAllArticles(): Article[] {
 }
 
 /**
- * Retourne la liste des tags uniques (tous articles confondus).
+ * Returns the list of unique tags (across all articles).
  */
 export function getAllTags(): string[] {
   const articles = getAllArticles();
@@ -18,11 +18,11 @@ export function getAllTags(): string[] {
       for (const t of tags) if (t != null && String(t).trim()) set.add(String(t).trim());
     }
   }
-  return Array.from(set).sort((a, b) => a.localeCompare(b, "fr"));
+  return Array.from(set).sort((a, b) => a.localeCompare(b, "en"));
 }
 
 /**
- * Retourne la liste des catégories uniques (tous articles confondus).
+ * Returns the list of unique categories (across all articles).
  */
 export function getAllCategories(): string[] {
   const articles = getAllArticles();
@@ -31,11 +31,11 @@ export function getAllCategories(): string[] {
     const cat = a.meta.category;
     if (cat != null && String(cat).trim()) set.add(String(cat).trim());
   }
-  return Array.from(set).sort((a, b) => a.localeCompare(b, "fr"));
+  return Array.from(set).sort((a, b) => a.localeCompare(b, "en"));
 }
 
 /**
- * Retourne les articles ayant le tag donné (comparaison insensible à la casse).
+ * Returns articles that have the given tag (case-insensitive comparison).
  */
 export function getArticlesByTag(tag: string): Article[] {
   const articles = getAllArticles();
@@ -48,7 +48,7 @@ export function getArticlesByTag(tag: string): Article[] {
 }
 
 /**
- * Retourne les articles de la catégorie donnée (comparaison insensible à la casse).
+ * Returns articles in the given category (case-insensitive comparison).
  */
 export function getArticlesByCategory(category: string): Article[] {
   const articles = getAllArticles();

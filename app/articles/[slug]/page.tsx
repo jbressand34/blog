@@ -28,7 +28,7 @@ export default function ArticlePage({ params }: Props) {
             <span style={{ marginLeft: "1rem" }}>
               {category && (
                 <>
-                  Catégorie :{" "}
+                  Category:{" "}
                   <Link href={`/categories/${encodeURIComponent(category)}`}>
                     {category}
                   </Link>
@@ -37,7 +37,7 @@ export default function ArticlePage({ params }: Props) {
               {category && tags && tags.length > 0 && " · "}
               {tags && tags.length > 0 && (
                 <>
-                  Tags :{" "}
+                  Tags:{" "}
                   {tags.map((t, i) => (
                     <span key={t}>
                       <Link href={`/tags/${encodeURIComponent(t)}`}>{t}</Link>

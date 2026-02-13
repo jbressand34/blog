@@ -16,17 +16,17 @@ export default function Home() {
     <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
       <h1 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>Articles</h1>
       <p style={{ color: "#666", marginBottom: "1rem" }}>
-        Bienvenue. Parcourez les articles, les tags ou les catégories.
+        Welcome. Browse articles, tags, or categories.
       </p>
 
       {(tags.length > 0 || categories.length > 0) && (
         <section style={{ marginBottom: "2rem" }}>
           <h2 style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>
-            Parcourir par
+            Browse by
           </h2>
           {tags.length > 0 && (
             <p style={{ marginBottom: "0.25rem" }}>
-              Tags :{" "}
+              Tags:{" "}
               {tags.map((tag, i) => (
                 <span key={tag}>
                   <Link href={`/tags/${encodeURIComponent(tag)}`}>{tag}</Link>
@@ -37,7 +37,7 @@ export default function Home() {
           )}
           {categories.length > 0 && (
             <p>
-              Catégories :{" "}
+              Categories:{" "}
               {categories.map((cat, i) => (
                 <span key={cat}>
                   <Link href={`/categories/${encodeURIComponent(cat)}`}>
@@ -52,10 +52,10 @@ export default function Home() {
       )}
 
       <h2 style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>
-        Tous les articles
+        All articles
       </h2>
       {articles.length === 0 ? (
-        <p>Aucun article pour l’instant.</p>
+        <p>No articles yet.</p>
       ) : (
         <ul style={{ listStyle: "none" }}>
           {articles.map((article) => (

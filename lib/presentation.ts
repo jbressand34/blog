@@ -11,7 +11,7 @@ export type Presentation = {
 
 /**
  * Lit et parse la page de présentation (content/presentation.md).
- * Retourne null si le fichier n'existe pas.
+ * Returns null if the file does not exist.
  */
 export function getPresentation(): Presentation | null {
   if (!fs.existsSync(PRESENTATION_PATH)) return null;
@@ -20,7 +20,7 @@ export function getPresentation(): Presentation | null {
   const { data, content } = matter(raw);
 
   return {
-    title: (data.title as string) ?? "Présentation",
+    title: (data.title as string) ?? "About",
     content,
   };
 }

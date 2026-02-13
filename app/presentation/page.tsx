@@ -9,10 +9,10 @@ export default function PresentationPage() {
     return (
       <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
         <p style={{ marginBottom: "1rem" }}>
-          <Link href="/">← Retour au blog</Link>
+          <Link href="/">← Back to blog</Link>
         </p>
-        <h1>Présentation</h1>
-        <p>La page de présentation n’est pas encore configurée. Ajoutez <code>content/presentation.md</code>.</p>
+        <h1>About</h1>
+        <p>The about page is not configured yet. Add <code>content/presentation.md</code>.</p>
       </main>
     );
   }
@@ -20,7 +20,7 @@ export default function PresentationPage() {
   return (
     <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
       <p style={{ marginBottom: "1rem" }}>
-        <Link href="/">← Retour au blog</Link>
+        <Link href="/">← Back to blog</Link>
       </p>
       <article>
         <h1>{presentation.title}</h1>

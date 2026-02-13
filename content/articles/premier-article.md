@@ -1,16 +1,16 @@
 ---
-title: Premier article
+title: First article
 date: 2025-02-06
-category: général
+category: general
 tags:
   - blog
   - test
 ---
 
-Ceci est le **premier article** du blog.
+This is the **first article** of the blog.
 
-Il est rédigé en Markdown et versionné dans le dépôt Git. Le front matter en tête définit le titre, la date, la catégorie et les tags.
+It is written in Markdown and versioned in the Git repository. The front matter at the top defines the title, date, category, and tags.
 
-## Objectif
+## Goal
 
-Prouver que le contenu est bien lu depuis le dépôt au build (étape 2 du premier test).
+To show that content is correctly loaded from the repository at build time (step 2 of the first test).

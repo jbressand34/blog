@@ -20,10 +20,10 @@ export default function CategoryPage({ params }: Props) {
   return (
     <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
       <p style={{ marginBottom: "1rem" }}>
-        <Link href="/">← Retour au blog</Link>
+        <Link href="/">← Back to blog</Link>
       </p>
       <h1 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>
-        Catégorie : {category}
+        Category: {category}
       </h1>
       <p style={{ color: "#666", marginBottom: "1rem" }}>
         {articles.length} article{articles.length > 1 ? "s" : ""}.

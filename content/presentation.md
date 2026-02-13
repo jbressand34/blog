@@ -1,5 +1,3 @@
-# About This Blog
-
 Welcome 👋
 
 This blog is a space dedicated to exploring Artificial Intelligence from both a practical and a reflective perspective.

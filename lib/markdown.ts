@@ -18,7 +18,7 @@ export type Article = {
 };
 
 /**
- * Lit et parse un article Markdown par son slug (nom du fichier sans .md).
+ * Reads and parses a Markdown article by its slug (filename without .md).
  */
 export function getArticleBySlug(slug: string): Article | null {
   const filePath = path.join(CONTENT_DIR, `${slug}.md`);
@@ -46,7 +46,7 @@ export function getArticleBySlug(slug: string): Article | null {
 }
 
 /**
- * Retourne la liste des slugs d’articles (noms des fichiers .md dans content/articles).
+ * Returns the list of article slugs (names of .md files in content/articles).
  */
 export function getArticleSlugs(): string[] {
   if (!fs.existsSync(CONTENT_DIR)) return [];
