@@ -13,6 +13,9 @@ export default function Header() {
         style={{
           maxWidth: "48rem",
           margin: "0 auto",
+          display: "flex",
+          gap: "1.5rem",
+          alignItems: "baseline",
         }}
       >
         <Link
@@ -20,6 +23,9 @@ export default function Header() {
           style={{ fontWeight: 700, fontSize: "1.25rem" }}
         >
           Blog
+        </Link>
+        <Link href="/presentation" style={{ color: "#666" }}>
+          Présentation
         </Link>
       </nav>
     </header>
