@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import { getArticleBySlug, getArticleSlugs } from "@/lib/markdown";
@@ -15,15 +16,39 @@ export default function ArticlePage({ params }: Props) {
 
   if (!article) notFound();
 
+  const { category, tags } = article.meta;
+
   return (
     <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
       <article>
         <h1>{article.meta.title}</h1>
-        {article.meta.date && (
-          <p style={{ color: "#666", marginBottom: "1.5rem" }}>
-            {article.meta.date}
-          </p>
-        )}
+        <p style={{ color: "#666", marginBottom: "0.5rem" }}>
+          {article.meta.date}
+          {(category || (tags && tags.length > 0)) && (
+            <span style={{ marginLeft: "1rem" }}>
+              {category && (
+                <>
+                  Catégorie :{" "}
+                  <Link href={`/categories/${encodeURIComponent(category)}`}>
+                    {category}
+                  </Link>
+                </>
+              )}
+              {category && tags && tags.length > 0 && " · "}
+              {tags && tags.length > 0 && (
+                <>
+                  Tags :{" "}
+                  {tags.map((t, i) => (
+                    <span key={t}>
+                      <Link href={`/tags/${encodeURIComponent(t)}`}>{t}</Link>
+                      {i < tags.length - 1 ? ", " : ""}
+                    </span>
+                  ))}
+                </>
+              )}
+            </span>
+          )}
+        </p>
         <div className="prose">
           <ReactMarkdown>{article.content}</ReactMarkdown>
         </div>
