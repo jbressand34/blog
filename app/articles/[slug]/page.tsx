@@ -19,7 +19,7 @@ export default function ArticlePage({ params }: Props) {
   const { category, tags } = article.meta;
 
   return (
-    <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
+    <main className="reading-width">
       <article>
         <h1>{article.meta.title}</h1>
         <div className="article-meta">

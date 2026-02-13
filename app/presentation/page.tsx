@@ -7,7 +7,7 @@ export default function PresentationPage() {
 
   if (!presentation) {
     return (
-      <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
+      <main className="reading-width">
         <p style={{ marginBottom: "1rem" }}>
           <Link href="/">← Back to blog</Link>
         </p>
@@ -18,7 +18,7 @@ export default function PresentationPage() {
   }
 
   return (
-    <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
+    <main className="reading-width">
       <p style={{ marginBottom: "1rem" }}>
         <Link href="/">← Back to blog</Link>
       </p>

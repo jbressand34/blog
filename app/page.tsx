@@ -13,17 +13,15 @@ export default function Home() {
   const categories = getAllCategories();
 
   return (
-    <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
-      <h1 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>Articles</h1>
+    <main className="reading-width">
+      <h1>Articles</h1>
       <p className="text-muted" style={{ marginBottom: "1rem" }}>
         Welcome. Browse articles, tags, or categories.
       </p>
 
       {(tags.length > 0 || categories.length > 0) && (
         <section style={{ marginBottom: "2rem" }}>
-          <h2 style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>
-            Browse by
-          </h2>
+          <h2>Browse by</h2>
           {tags.length > 0 && (
             <>
               <span style={{ fontSize: "0.9rem", color: "var(--color-text-muted)" }}>Tags</span>
@@ -59,9 +57,7 @@ export default function Home() {
         </section>
       )}
 
-      <h2 style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>
-        All articles
-      </h2>
+      <h2>All articles</h2>
       {articles.length === 0 ? (
         <p>No articles yet.</p>
       ) : (

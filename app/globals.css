@@ -11,15 +11,75 @@
   --color-bg-subtle: #f8f8f8;
   --color-link: #0a66c2;
   --color-link-hover: #004182;
+  --reading-width: 48rem;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-reading: Georgia, "Times New Roman", Times, serif;
 }
 
 html,
 body {
   max-width: 100vw;
   min-height: 100vh;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.6;
   color: var(--color-text);
+}
+
+/* Reading width: main content (articles, home, etc.) */
+.reading-width {
+  max-width: var(--reading-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem 2rem;
+}
+
+/* Heading scale (h1–h6) */
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.35;
+}
+
+h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+  line-height: 1.4;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+h6 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.45;
 }
 
 a {
@@ -41,10 +101,45 @@ a:focus-visible {
   color: var(--color-text-muted);
 }
 
+/* Prose: article/presentation body — reading font + line-height */
+.prose {
+  font-family: var(--font-reading);
+  line-height: 1.7;
+}
+
 .prose h2 {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.prose h3 {
+  font-size: 1.15rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.35;
+}
+
+.prose h4 {
+  font-size: 1.05rem;
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+  line-height: 1.4;
+}
+
+.prose h5 {
+  font-size: 1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.prose h6 {
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.45;
 }
 
 .prose p {

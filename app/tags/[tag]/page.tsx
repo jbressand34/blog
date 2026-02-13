@@ -18,13 +18,11 @@ export default function TagPage({ params }: Props) {
   if (articles.length === 0) notFound();
 
   return (
-    <main style={{ padding: "0 2rem 2rem", maxWidth: "48rem", margin: "0 auto" }}>
+    <main className="reading-width">
       <p style={{ marginBottom: "1rem" }}>
         <Link href="/">← Back to blog</Link>
       </p>
-      <h1 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>
-        Tag: {tag}
-      </h1>
+      <h1>Tag: {tag}</h1>
       <p className="text-muted" style={{ marginBottom: "1rem" }}>
         {articles.length} article{articles.length > 1 ? "s" : ""}.
       </p>
