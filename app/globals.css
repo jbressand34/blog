@@ -227,42 +227,52 @@ a:focus-visible {
   color: var(--color-text);
 }
 
-/* Layout: article list (home) */
-.article-list {
+/* Layout: article cards (home) */
+.article-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
   list-style: none;
 }
 
-.article-list li {
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--color-border);
+.article-card {
+  display: block;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
 }
 
-.article-list li:last-child {
-  border-bottom: none;
+.article-card:hover {
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: var(--color-text);
 }
 
-.article-list-item {
+.article-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.35;
+}
+
+.article-card-meta {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
   gap: 0.5rem;
-}
-
-.article-list-item .title-block {
-  min-width: 0;
-}
-
-.article-list-item .category {
   font-size: 0.85rem;
   color: var(--color-text-muted);
-  margin-top: 0.15rem;
 }
 
-.article-list-item .date {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
+.article-card-date {
   white-space: nowrap;
+}
+
+.article-card-category {
+  font-weight: 500;
 }
 
 /* Layout: article page metadata */

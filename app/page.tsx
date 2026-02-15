@@ -61,25 +61,25 @@ export default function Home() {
       {articles.length === 0 ? (
         <p>No articles yet.</p>
       ) : (
-        <ul className="article-list">
+        <div className="article-cards">
           {articles.map((article) => (
-            <li key={article.meta.slug}>
-              <div className="article-list-item">
-                <div className="title-block">
-                  <Link href={`/articles/${article.meta.slug}`}>
-                    {article.meta.title}
-                  </Link>
-                  {article.meta.category && (
-                    <div className="category">{article.meta.category}</div>
-                  )}
-                </div>
+            <Link
+              key={article.meta.slug}
+              href={`/articles/${article.meta.slug}`}
+              className="article-card"
+            >
+              <h3 className="article-card-title">{article.meta.title}</h3>
+              <div className="article-card-meta">
                 {article.meta.date && (
-                  <span className="date">{article.meta.date}</span>
+                  <span className="article-card-date">{article.meta.date}</span>
+                )}
+                {article.meta.category && (
+                  <span className="article-card-category">{article.meta.category}</span>
                 )}
               </div>
-            </li>
+            </Link>
           ))}
-        </ul>
+        </div>
       )}
     </main>
   );
