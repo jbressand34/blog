@@ -264,16 +264,17 @@ a:focus-visible {
 .article-card {
   display: block;
   padding: 1.25rem;
-  border-radius: 0.5rem;
-  background: transparent;
+  border-radius: 0.25rem;
+  background: #fff;
   color: var(--color-text);
   text-decoration: none;
-  transition: background 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.08);
+  transition: background 0.15s ease;
 }
 
 .article-card:hover {
   background: #f5f5f5;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.08);
   text-decoration: none;
   color: var(--color-text);
 }
@@ -312,7 +313,6 @@ a:focus-visible {
 .site-footer {
   margin-top: 3rem;
   padding: 1.5rem 2rem;
-  border-top: 1px solid var(--color-border);
   background: var(--color-bg-subtle);
   font-size: 0.9rem;
   color: var(--color-text-muted);
