@@ -157,10 +157,7 @@ a:focus-visible {
 
 /* Layout: header */
 .site-header {
-  background: var(--color-bg-subtle);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   margin-bottom: 2rem;
 }
 
@@ -168,8 +165,40 @@ a:focus-visible {
   max-width: 48rem;
   margin: 0 auto;
   display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.site-header .header-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.site-header .header-name:hover {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.site-header .header-links {
+  display: flex;
   gap: 1.5rem;
   align-items: baseline;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.site-header .header-links a {
+  color: var(--color-text-muted);
+}
+
+.site-header .header-links a:hover {
+  color: var(--color-text);
+  text-decoration: none;
 }
 
 /* Layout: pills (tags / categories) */
@@ -182,16 +211,20 @@ a:focus-visible {
 
 .pill {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.9rem;
-  border-radius: 9999px;
-  background: var(--color-bg-subtle);
-  border: 1px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--color-text);
+  transition: background 0.15s ease, box-shadow 0.15s ease;
 }
 
 .pill:hover {
   text-decoration: none;
-  background: var(--color-border);
+  background: #f5f5f5;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  color: var(--color-text);
 }
 
 /* Layout: article list (home) */

@@ -4,15 +4,13 @@ export default function Header() {
   return (
     <header className="site-header">
       <nav>
-        <Link
-          href="/"
-          style={{ fontWeight: 700, fontSize: "1.25rem" }}
-        >
-          Blog
+        <Link href="/" className="header-name">
+          Jérémy Bressand
         </Link>
-        <Link href="/presentation" className="text-muted">
-          About
-        </Link>
+        <div className="header-links">
+          <Link href="/">Blog</Link>
+          <Link href="/presentation">About</Link>
+        </div>
       </nav>
     </header>
   );
