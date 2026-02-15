@@ -33,6 +33,32 @@ body {
   padding: 0 2rem 2rem;
 }
 
+/* Home page: vertical spacing by hierarchy */
+.page-home h1 {
+  margin-bottom: 1.25rem;
+}
+
+.page-home-intro {
+  margin-bottom: 2rem;
+}
+
+.page-home h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-home h2:first-of-type {
+  margin-top: 0;
+}
+
+.page-home-section {
+  margin-bottom: 2.5rem;
+}
+
+.page-home .article-cards {
+  margin-top: 0.5rem;
+}
+
 /* Heading scale (h1–h6) */
 h1 {
   font-size: 1.75rem;

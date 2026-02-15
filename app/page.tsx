@@ -13,14 +13,14 @@ export default function Home() {
   const categories = getAllCategories();
 
   return (
-    <main className="reading-width">
+    <main className="reading-width page-home">
       <h1>Articles</h1>
-      <p className="text-muted" style={{ marginBottom: "1rem" }}>
+      <p className="text-muted page-home-intro">
         Welcome. Browse articles, tags, or categories.
       </p>
 
       {(tags.length > 0 || categories.length > 0) && (
-        <section style={{ marginBottom: "2rem" }}>
+        <section className="page-home-section">
           <h2>Browse by</h2>
           {tags.length > 0 && (
             <>
